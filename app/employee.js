@@ -122,6 +122,8 @@ const employee = {
             // Assign the form data
             this.employeeID = employee.employeeID;
             this.name = employee.name;
+            // Reset errors
+            this.errors = [];
         },
         /*
         * Form validation

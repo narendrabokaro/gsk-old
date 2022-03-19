@@ -161,11 +161,14 @@ const projects = {
             this.startDate = "";
             this.newEmployee = "";
             this.employees = [];
+            this.errors = [];
         },
         /*
         * Action for Edit project button
         */
         editProjectBtnAction (project) {
+            // Reset error
+            this.errors = [];
             // Change the modal title
             this.modalTitle = "Update Project";
             // Assign the employee field data
