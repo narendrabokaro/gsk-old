@@ -15,8 +15,8 @@ function validateProjects(project) {
     return Joi.validate(project, projectSchema);
 };
 
-// User list
-const users = [
+// employee list
+const employees = [
     {employeeID: 'gsk101', name: 'narendra singh'},
     {employeeID: 'gsk102', name: 'Gautam GopalKrishnan'},
     {employeeID: 'gsk104', name: 'Kavya'},
@@ -36,13 +36,24 @@ const projects = [
 app.use(express.json());
 app.use(cors());
 
+// Get a employee
+app.get('/api/employees/:employeeID', (req, res) => {
+    // Look up for the particular employee
+    const employee = employees.find(p => p.employeeID === req.params.employeeID);
+    // If not found then send the response code with message
+    if (!employee) res.status(200).send('Employee with given ID not found');
+    // Send the employees as response
+    res.status(404).send('Employee with given ID already exist');
+});
+
+
 // Get all users
-app.get('/api/users', (req, res) => {
-    res.send(users);
+app.get('/api/employees', (req, res) => {
+    res.send(employees);
 });
 
 // Create a new user
-app.post('/api/users', (req, res) => {
+app.post('/api/employees', (req, res) => {
     const requestBody = req.body;
     // Validate the user formm data
     const userSchema = {
@@ -62,7 +73,7 @@ app.post('/api/users', (req, res) => {
     };
 
     // Add the user to user list
-    users.push(newUser);
+    employees.push(newUser);
     // Send the user as response
     res.send(newUser);
 });
