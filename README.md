@@ -1,6 +1,3 @@
-# gsk
-GSK Assignment
-
 # How to run the application
   1. Download and extract the assignment folder
   2. Assignment folder consist of two sub folders
