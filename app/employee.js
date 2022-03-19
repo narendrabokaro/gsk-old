@@ -106,6 +106,7 @@ const employee = {
             this.isForUpdateForm = false;
 
             // Reset all required form data
+            this.errors = [];
             this.employeeID = "";
             this.name = "";
         },
