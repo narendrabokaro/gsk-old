@@ -1,5 +1,9 @@
 const routes = [
     {
+        path: '/',
+        component: projects
+    },
+    {
         path: '/employee',
         component: employee
     },

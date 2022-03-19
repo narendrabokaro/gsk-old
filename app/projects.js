@@ -85,15 +85,15 @@ const projects = {
 
                                     <div class="input-group mb-3">
                                         <span class="input-group-text">Name</span>
-                                        <input type="text" class="form-control" v-model="name">
+                                        <input type="text" class="form-control" v-model="name" placeholder="Enter project name here">
                                     </div>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text">Description</span>
-                                        <input type="text" class="form-control" v-model="description">
+                                        <input type="text" class="form-control" v-model="description" placeholder="Enter description name here">
                                     </div>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text">Start Date</span>
-                                        <input type="date" class="form-control" v-model="startDate">
+                                        <input type="date" class="form-control" v-model="startDate" placeholder="Enter start date here">
                                     </div>
                                     
                                     <div class="input-group mb-3">
@@ -102,11 +102,11 @@ const projects = {
                                     </div>
 
                                     <div class="input-group mb-3" v-if="isForUpdateForm">
-                                        <input type="text" class="form-control" v-model="newEmployee">
+                                        <input type="text" class="form-control" v-model="newEmployee" placeholder="link or unlink employees to a project">
                                     </div>
 
-                                    <button type="button" @click="createProject()" v-if="id == 0" class="btn btn-primary">Create</button>
-                                    <button type="button" @click="updateProject()" v-if="id != 0" class="btn btn-primary">Update</button>
+                                    <button type="button" @click="createProject()" v-if="id == 0" class="btn btn-primary btn-create">Create</button>
+                                    <button type="button" @click="updateProject()" v-if="id != 0" class="btn btn-primary btn-create">Update</button>
                                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" ref="cancelBtn">Cancel</button>
                                 </div>
                             </div>
