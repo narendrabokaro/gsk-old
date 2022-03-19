@@ -40,8 +40,13 @@ app.use(cors());
 app.get('/api/employees/:employeeID', (req, res) => {
     // Look up for the particular employee
     const employee = employees.find(p => p.employeeID === req.params.employeeID);
+
     // If not found then send the response code with message
-    if (!employee) res.status(200).send('Employee with given ID not found');
+    if (!employee) {
+        res.status(200).send('Employee with given ID not found');
+        return;
+    }
+
     // Send the employees as response
     res.status(404).send('Employee with given ID already exist');
 });
@@ -55,11 +60,13 @@ app.get('/api/employees', (req, res) => {
 // Create a new user
 app.post('/api/employees', (req, res) => {
     const requestBody = req.body;
+
     // Validate the user formm data
     const userSchema = {
         employeeID: Joi.string().alphanum().length(6).required(),
         name: Joi.string().min(3).max(50).required()
     };
+
     const { error } = Joi.validate(req.body, userSchema);
     if (error) {
         res.status(400).send(error.details[0].message);
@@ -90,8 +97,13 @@ app.get('/api/projects', (req, res) => {
 app.get('/api/projects/:id', (req, res) => {
     // Look up for the particular project
     const project = projects.find(p => p.id === parseInt(req.params.id));
+
     // If not found then send the response code with message
-    if (!project) res.status(404).send('The project with given ID not found');
+    if (!project) {
+        res.status(404).send('The project with given ID not found');
+        return;
+    }
+
     // Send the project as response
     res.send(project);
 });
@@ -114,8 +126,10 @@ app.post('/api/projects', (req, res) => {
         startDate: requestBody.startDate,
         employees: requestBody.employees
     };
+
     // Add the new project to project list
     projects.push(newProject);
+
     // Send the project as response
     res.send(newProject);
 });
@@ -149,4 +163,4 @@ app.put('/api/projects/:id', (req, res) => {
     res.send(project);
 });
 
-app.listen(5000, () => console.log(`Example app listening on port :5000`))
+app.listen(5000, () => console.log(`Listening on port :5000`))
