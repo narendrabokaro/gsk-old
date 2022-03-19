@@ -51,4 +51,7 @@
    
   Notes :- 
   
-  I used CDN javascript package for Vuejs application development so the application requires Active internet cocnnection and latest node version.
+  1. Used CDN javascript package for Vuejs application development so the application requires Active internet cocnnection and latest node version.
+  2. Used the Bootstrap library
+  3. Used In memory solution for storing data
+  4. 
