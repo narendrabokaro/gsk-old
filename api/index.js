@@ -163,4 +163,4 @@ app.put('/api/projects/:id', (req, res) => {
     res.send(project);
 });
 
-app.listen(5000, () => console.log(`Listening on port :5000`))
+module.exports = app.listen(5000);
