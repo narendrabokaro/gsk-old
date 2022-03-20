@@ -10,6 +10,11 @@
   4. Once npm command run completely then run `node index.js`
   5. Now to run Vuejs front end application, go inside the "app" folder and open `index.html` in browser.
 
+# Run the unit test cases
+  Go inside the "api" folder and run the `npm test` in command prompt or terminal.
+  ![jesttestcases](https://user-images.githubusercontent.com/659550/159155760-8ed5f961-0851-49d0-a5fc-b92b723bd6e9.PNG)
+
+
 # How to use this application
 
   # Project creation -
